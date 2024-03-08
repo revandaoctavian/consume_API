@@ -1,16 +1,28 @@
-<?php
-
-require 'vendor/autoload.php';
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-$api_key = $_ENV['API_KEY'];
-$BASE_URL = "https://apiv3.apifootball.com/";
-
-$url = "$BASE_URL?action=get_countries&APIkey=$api_key";
-$data = file_get_contents($url);
-$response = json_decode($data, true);
-
-var_dump($data)
+<?php 
+require 'api/get_standings.php';
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Standings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <?php include 'components/navbar.php'; ?>
+
+    <div class="container">
+        <h1>Football Standings</h1>
+        <ul>
+            <?php foreach ($countries as $country): ?>
+                <li><?php echo $country['country_name']; ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+
+</body>
+</html>
