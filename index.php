@@ -12,17 +12,18 @@ require 'api/get_standings.php';
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 <body>
-
-    <?php include 'components/navbar.php'; ?>
-
     <div class="container">
         <h1>Football Standings</h1>
         <ul>
-            <?php foreach ($countries as $country): ?>
-                <li><?php echo $country['country_name']; ?></li>
-            <?php endforeach; ?>
+            <li>
+                <a href="#">English League</a>
+                <a href="#">Italy League</a>
+                <a href="#">Spain League</a>
+                <a href="#">German League</a>
+                <a href="#">Indonesia League</a>
+            </li>
         </ul>
+        <?php include 'pages/englishLeauge.php' ?>
     </div>
-
 </body>
 </html>
