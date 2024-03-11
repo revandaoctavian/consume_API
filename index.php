@@ -1,6 +1,6 @@
 <?php 
-require 'api/get_standings.php';
-?>
+    require 'api/get_standings.php';
+?>  
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,22 +8,63 @@ require 'api/get_standings.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Standings</title>
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            margin-top: 24px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>Football Standings</h1>
-        <ul>
-            <li>
-                <a href="#">English League</a>
-                <a href="#">Italy League</a>
-                <a href="#">Spain League</a>
-                <a href="#">German League</a>
-                <a href="#">Indonesia League</a>
+        <ul class="nav justify-content-center my-16">
+            <li class="nav-item mx-3">
+                <a class="nav-link btn <?php echo ($_GET['league'] == 'english') ? 'btn-primary text-white' : 'btn-outline-primary'; ?>" href="index.php?league=english">English League</a>
+            </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link btn <?php echo ($_GET['league'] == 'france') ? 'btn-primary text-white' : 'btn-outline-primary'; ?>" href="index.php?league=france">France League</a>
+            </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link btn <?php echo ($_GET['league'] == 'german') ? 'btn-primary text-white' : 'btn-outline-primary'; ?>"" href="index.php?league=german">German League</a>
+            </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link btn <?php echo ($_GET['league'] == 'indonesia') ? 'btn-primary text-white' : 'btn-outline-primary'; ?>"" href="index.php?league=indonesia">Indonesia League</a>
+            </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link btn <?php echo ($_GET['league'] == 'italy') ? 'btn-primary text-white' : 'btn-outline-primary'; ?>"" href="index.php?league=italy">Italy League</a>
+            </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link btn <?php echo ($_GET['league'] == 'spain') ? 'btn-primary text-white' : 'btn-outline-primary'; ?>"" href="index.php?league=spain">Spain League</a>
             </li>
         </ul>
-        <?php include 'pages/englishLeauge.php' ?>
+
+        <?php
+        if (isset($_GET['league'])) {
+            $league = $_GET['league'];
+
+            if ($league === 'english') {
+                include 'pages/englishLeague.php';
+            } elseif ($league === 'france') {
+                include 'pages/franceLeague.php';
+            } elseif ($league === 'german') {
+                include 'pages/germanLeague.php';
+            } elseif ($league === 'indonesia') {
+                include 'pages/indonesiaLeague.php';
+            } elseif ($league === 'italy') {
+                include 'pages/italyLeague.php';
+            } elseif ($league === 'spain') {
+                include 'pages/spainLeague.php';
+            } else {
+                include 'pages/englishLeague.php';
+            }
+        } else {
+            include 'pages/englishLeague.php';
+        };
+        ?>
     </div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
