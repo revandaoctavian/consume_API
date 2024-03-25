@@ -22,22 +22,22 @@
         <h1>Football Standings</h1>
         <ul class="nav justify-content-center my-16">
             <li class="nav-item mx-3">
-                <a class="nav-link btn <?php echo ($_GET['league'] == 'english') ? 'btn-primary text-white' : 'btn-outline-primary'; ?>" href="index.php?league=english">English League</a>
+                <a class="nav-link btn <?php echo (isset($_GET['league']) && $_GET['league'] == 'english') ? 'btn-primary text-white' : 'btn-outline-primary'; ?>" href="index.php?league=english" >English League</a>
             </li>
             <li class="nav-item mx-3">
-                <a class="nav-link btn <?php echo ($_GET['league'] == 'france') ? 'btn-primary text-white' : 'btn-outline-primary'; ?>" href="index.php?league=france">France League</a>
+                <a class="nav-link btn <?php echo (isset($_GET['league']) && $_GET['league'] == 'france') ? 'btn-primary text-white' : 'btn-outline-primary'; ?>" href="index.php?league=france">France League</a>
             </li>
             <li class="nav-item mx-3">
-                <a class="nav-link btn <?php echo ($_GET['league'] == 'german') ? 'btn-primary text-white' : 'btn-outline-primary'; ?>"" href="index.php?league=german">German League</a>
+                <a class="nav-link btn <?php echo (isset($_GET['league']) && $_GET['league'] == 'german') ? 'btn-primary text-white' : 'btn-outline-primary'; ?>" href="index.php?league=german">German League</a>
             </li>
             <li class="nav-item mx-3">
-                <a class="nav-link btn <?php echo ($_GET['league'] == 'indonesia') ? 'btn-primary text-white' : 'btn-outline-primary'; ?>"" href="index.php?league=indonesia">Indonesia League</a>
+                <a class="nav-link btn <?php echo (isset($_GET['league']) && $_GET['league'] == 'indonesia') ? 'btn-primary text-white' : 'btn-outline-primary'; ?>" href="index.php?league=indonesia">Indonesia League</a>
             </li>
             <li class="nav-item mx-3">
-                <a class="nav-link btn <?php echo ($_GET['league'] == 'italy') ? 'btn-primary text-white' : 'btn-outline-primary'; ?>"" href="index.php?league=italy">Italy League</a>
+                <a class="nav-link btn <?php echo (isset($_GET['league']) && $_GET['league'] == 'italy') ? 'btn-primary text-white' : 'btn-outline-primary'; ?>" href="index.php?league=italy">Italy League</a>
             </li>
             <li class="nav-item mx-3">
-                <a class="nav-link btn <?php echo ($_GET['league'] == 'spain') ? 'btn-primary text-white' : 'btn-outline-primary'; ?>"" href="index.php?league=spain">Spain League</a>
+                <a class="nav-link btn <?php echo (isset($_GET['league']) && $_GET['league'] == 'spain') ? 'btn-primary text-white' : 'btn-outline-primary'; ?>" href="index.php?league=spain">Spain League</a>
             </li>
         </ul>
 
